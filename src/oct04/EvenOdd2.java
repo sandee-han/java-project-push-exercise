@@ -3,6 +3,14 @@ package oct04;
 import java.util.Scanner;
 
 public class EvenOdd2 {
+    public static String getEvenOdd(int num){
+        if(num % 2 == 0){
+            return "짝수";
+        } else {
+            return "홀수";
+        }
+    }
+
     public static void main(String[] args) {
         /*
             정수 두개가 입력으로 들어온다.
@@ -17,15 +25,9 @@ public class EvenOdd2 {
         Scanner sc = new Scanner(System.in);
         int firstNum = sc.nextInt();
         int secondNum = sc.nextInt();
+        int sumNum = firstNum + secondNum;
 
-        if(secondNum % 2 == 0 && firstNum % 2 == 0) {
-            System.out.println("짝수+짝수=짝수");
-        } else if (firstNum % 2 == 0 && secondNum % 2 == 1) {
-            System.out.println("짝수+홀수=홀수");
-        } else if (firstNum % 2 == 1 && secondNum % 2 == 1) {
-            System.out.println("홀수+홀수=짝수");
-        } else {
-            System.out.println("홀수+짝수=홀수");
-        }
+        System.out.printf("%s+%s=%s", getEvenOdd(firstNum), getEvenOdd(secondNum), getEvenOdd(sumNum));
+
     }
 }
