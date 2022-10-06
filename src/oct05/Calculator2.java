@@ -14,24 +14,25 @@ public class Calculator2 implements RandomGen{
     }
 
     public void plus() {
-        System.out.println(a + b);
+        System.out.println("a + b = " + (a + b));
     }
 
     public void sub() {
-        System.out.println(a - b);
+        System.out.println("a - b = " + (a - b));
     }
 
     public void div() {
+
         if(b == 0){
             System.out.println("랜덤하게 생성된 숫자가 0입니다.");
         } else {
-            System.out.println(a / (double)b);
+            System.out.println("a / b = " + (a / (double)b));
         }
 
     }
 
     public void multiple() {
-        System.out.println(a * b);
+        System.out.println("a * b = " + (a * b));
     }
 
     @Override
