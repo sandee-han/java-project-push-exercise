@@ -55,11 +55,31 @@ public class FileExercise {
         return str;
     }
 
+    public String readNChars(int N) throws IOException{
+        // FileReader("여기에 원하는 파일의 디렉토리.파일명."); 적으면 파일의 데이터를 불러온다.
+        FileReader fileReader = new FileReader("./aa_file.txt");
+        String str = "";
+        for (int i = 0; i < N; i++){
+            // -가 나올 경우 break
+            int asciiCd = fileReader.read();
+            if (asciiCd == -1) {
+                return str;
+            }
+            str += (char)asciiCd;
+        }
+
+        // read 쓰려면 IOException 선언해야함
+        return str;
+    }
+
+
     public static void main(String[] args) throws IOException {
         FileExercise fileExercise = new FileExercise();
         String str = fileExercise.read2Chars();
+        String str2 = fileExercise.readNChars(8);
         char c = fileExercise.readAChar();
         System.out.println(c);
         System.out.println(str);
+        System.out.println(str2);
     }
 }

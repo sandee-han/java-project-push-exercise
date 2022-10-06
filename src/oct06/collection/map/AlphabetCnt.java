@@ -21,7 +21,7 @@ public class AlphabetCnt {
 
     public static void main(String[] args) {
         AlphabetCnt alphabetCnt = new AlphabetCnt();
-        String s1 = "abccddefghijkkkkkllm".toUpperCase();
+        String s1 = "abcicddefghijkkkkkllm".toUpperCase();
 
         HashMap<Character, Integer> alphabetMap = new HashMap<>();
         for (char c = 'A'; c < 'Z'; c++){

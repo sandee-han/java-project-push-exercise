@@ -1,4 +1,4 @@
-package oct06.collection;
+package oct06.collection.numbergenerator_with_set;
 
 import java.util.HashSet;
 import java.util.Set;

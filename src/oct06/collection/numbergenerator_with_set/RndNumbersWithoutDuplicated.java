@@ -1,7 +1,6 @@
-package oct06.collection;
+package oct06.collection.numbergenerator_with_set;
 
 import java.util.HashSet;
-import java.util.Set;
 
 public class RndNumbersWithoutDuplicated {
     public static void main(String[] args) {
@@ -27,4 +26,5 @@ public class RndNumbersWithoutDuplicated {
         System.out.println(numbers);
         System.out.println(numbers.size());
     }
+
 }

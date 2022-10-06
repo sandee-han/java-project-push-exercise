@@ -9,40 +9,44 @@ import java.io.IOException;
 public class ReadFile {
     private String filename;
 
-    void readOneLetter() throws  IOException{
+    void readOneLetter() throws IOException {
         BufferedReader br = new BufferedReader(new FileReader(filename));
-        String line;
-        while ((line = br.readLine()) != null) {
-            System.out.print(line.charAt(0));
-        }
+        String line= br.readLine();
+        System.out.println(line.charAt(0));
         System.out.println();
     }
 
-    void readTwoLetters() throws  IOException{
+    void readTwoLetters() throws IOException {
         BufferedReader br = new BufferedReader(new FileReader(filename));
-        String line;
-        while ((line = br.readLine()) != null) {
-            System.out.print(line.charAt(0) + " ");
-            System.out.print(line.charAt(1) + " ");
-            System.out.println();
-        }
+        String line = br.readLine();
+        System.out.print(line.charAt(0));
+        System.out.println(line.charAt(1));
+        System.out.println();
+
     }
 
-    void readNumLetters(int num) throws  IOException{
+    void readNumLetters(int num) throws IOException {
         BufferedReader br = new BufferedReader(new FileReader(filename));
         String line;
         while ((line = br.readLine()) != null) {
             try {
-                for(int i = 0; i < num; i++) {
+                for (int i = 0; i < num; i++) {
                     System.out.print(line.charAt(i));
                 }
-            } catch (StringIndexOutOfBoundsException e){
+            } catch (StringIndexOutOfBoundsException e) {
 
             }
-            System.out.println();
+            System.out.println("\n");
         }
     }
-    public ReadFile(String filename){
+
+    void readOneLine() throws IOException {
+        BufferedReader br = new BufferedReader(new FileReader(filename));
+        String line = br.readLine();
+        System.out.println(line);
+    }
+
+    public ReadFile(String filename) {
         this.filename = filename;
     }
 
@@ -51,5 +55,6 @@ public class ReadFile {
         readFile.readOneLetter();
         readFile.readTwoLetters();
         readFile.readNumLetters(15);
+        readFile.readOneLine();
     }
 }
