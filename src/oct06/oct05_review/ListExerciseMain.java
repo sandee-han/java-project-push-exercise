@@ -2,7 +2,7 @@ package oct06.oct05_review;
 
 import java.util.List;
 
-public class ListEverciseMain {
+public class ListExerciseMain {
     public static void main(String[] args) {
         ListExercise listExercise = new ListExercise();
 

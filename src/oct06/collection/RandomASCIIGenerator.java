@@ -1,2 +1,16 @@
-package oct06.collection;public class RandomASCIIGenerator {
+package oct06.collection;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class RandomASCIIGenerator implements NumberGenerator{
+    private Set<Integer> asciiNumbers = new HashSet<>();
+
+    public Set<Integer> getAsciiNumbers() {
+        return asciiNumbers;
+    }
+    @Override
+    public int generate(int num) {
+        return (int)((Math.random() * num) + 65);
+    }
 }
