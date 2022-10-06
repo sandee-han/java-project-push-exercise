@@ -28,10 +28,9 @@ public class ReadFile {
         BufferedReader br = new BufferedReader(new FileReader(filename));
         String line;
         while ((line = br.readLine()) != null) {
-
             try {
                 for(int i = 0; i < num; i++) {
-                    System.out.println(line.charAt(i));
+                    System.out.print(line.charAt(i) + " ");
                 }
             } catch (StringIndexOutOfBoundsException e){
 
