@@ -2,12 +2,10 @@ package codeup_C_basic.codeup1011_1020;
 
 import java.util.Scanner;
 
-public class Codeup1015 {
+public class Codeup1017 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
-        float input = sc.nextFloat();
-
-        System.out.printf("%.2f", input);
+        int input = sc.nextInt();
+        System.out.printf("%d %d %d", input, input, input);
     }
 }
