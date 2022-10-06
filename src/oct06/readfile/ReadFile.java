@@ -15,6 +15,7 @@ public class ReadFile {
         while ((line = br.readLine()) != null) {
             System.out.print(line.charAt(0));
         }
+        System.out.println();
     }
 
     void readTwoLetters() throws  IOException{
@@ -23,6 +24,7 @@ public class ReadFile {
         while ((line = br.readLine()) != null) {
             System.out.print(line.charAt(0) + " ");
             System.out.print(line.charAt(1) + " ");
+            System.out.println();
         }
     }
 
@@ -32,12 +34,12 @@ public class ReadFile {
         while ((line = br.readLine()) != null) {
             try {
                 for(int i = 0; i < num; i++) {
-                    System.out.print(line.charAt(i) + " ");
+                    System.out.print(line.charAt(i));
                 }
             } catch (StringIndexOutOfBoundsException e){
 
             }
-
+            System.out.println();
         }
     }
     public ReadFile(String filename){
