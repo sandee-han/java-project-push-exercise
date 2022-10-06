@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
+
+// 내 코드
 public class ReadFile {
     private String filename;
 

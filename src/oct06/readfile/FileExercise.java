@@ -34,6 +34,7 @@ public class FileExercise {
     .\src
      */
 
+    // 1글자 읽는 메서드
     public char readAChar() throws IOException{
         // FileReader("여기에 원하는 파일의 디렉토리.파일명."); 적으면 파일의 데이터를 불러온다.
         FileReader fileReader = new FileReader("./aa_file.txt");
@@ -42,9 +43,23 @@ public class FileExercise {
         return (char)fileReader.read();
     }
 
+    // 2글자 읽는 메서드
+    public String read2Chars() throws IOException{
+        // FileReader("여기에 원하는 파일의 디렉토리.파일명."); 적으면 파일의 데이터를 불러온다.
+        FileReader fileReader = new FileReader("./aa_file.txt");
+        String str = "";
+        str += (char)fileReader.read();
+        str += (char)fileReader.read();
+
+        // read 쓰려면 IOException 선언해야함
+        return str;
+    }
+
     public static void main(String[] args) throws IOException {
         FileExercise fileExercise = new FileExercise();
+        String str = fileExercise.read2Chars();
         char c = fileExercise.readAChar();
         System.out.println(c);
+        System.out.println(str);
     }
 }
