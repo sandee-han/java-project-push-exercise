@@ -1,4 +1,4 @@
-package oct06.collection;
+package oct06.collection.map;
 
 import java.util.HashMap;
 
