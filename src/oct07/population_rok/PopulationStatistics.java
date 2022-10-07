@@ -5,7 +5,9 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class PopulationStatistics {
 
@@ -98,37 +100,67 @@ public class PopulationStatistics {
         }
     }
 
+    // 개수세는 메서드
+    public Map<String, Integer> getMoveCntMap(List<PopulationMove> pml) {
+        Map<String, Integer> moveCntMap = new HashMap<>();
+        for (PopulationMove pm : pml) {
+            String key = pm.getFromSido() + "," + pm.getToSido();
+            if(moveCntMap.get(key) == null) {
+                // 값 있는지 확인하고 없으면 value 1로 초기화
+                moveCntMap.put(key, 1);
+            }
+            // 있으면 value + 1
+            moveCntMap.put(key, moveCntMap.get(key) + 1);
+        }
+        return moveCntMap;
+    }
+
+
     public static void main(String[] args) throws IOException {
 
 //        FileReader fileReader = new FileReader(address);
         // 여기까진 파일을 읽지 않는다.
 
-//        populationStatistics.readFileByLine(address);
-//        populationStatistics.readByLine2(address);
+//        ps.readFileByLine(address);
+//        ps.readByLine2(address);
 
 
         // from_to.txt 파일 생성 시 사용
 //        String address = "C:\\Users\\iwmis\\Documents\\문서류\\멋사\\기타 자료\\Mdis 2021 data\\2021_인구관련연간자료_20220927_66125.csv";
-//        PopulationStatistics populationStatistics = new PopulationStatistics();
-//        List<PopulationMove> pml = populationStatistics.readByLine(address);
+//        PopulationStatistics ps = new PopulationStatistics();
+//        List<PopulationMove> pml = ps.readByLine(address);
 //
 //        List<String> strings = new ArrayList<>();
 //        for (PopulationMove pm : pml) {
-//            String fromTo = populationStatistics.fromToString(pm);
+//            String fromTo = ps.fromToString(pm);
 //            strings.add(fromTo);
 //        }
 //
-//        populationStatistics.write(strings, "./from_to.txt");
+//        ps.write(strings, "./from_to.txt");
+        System.out.println();
 
-        // 파일 전입, 전출 출력시 사용
+//        for (PopulationMove pm : pml) {
+//            System.out.printf("전입:%s, 전출:%s\n", pm.getFromSido(), pm.getToSido());
+//        }
+//        ps.write(strings, "./from_to.txt");
+        System.out.println();
+//      //   파일 전입, 전출 출력시 사용
         String address = "./from_to.txt";
-        PopulationStatistics populationStatistics = new PopulationStatistics();
-        List<PopulationMove> pml = populationStatistics.readByLine(address);
-        List<String> strings = new ArrayList<>();
+        PopulationStatistics ps = new PopulationStatistics();
+        List<PopulationMove> pml = ps.readByLine(address);
 
-        for (PopulationMove pm : pml) {
-            System.out.printf("전입:%s, 전출:%s\n", pm.getFromSido(), pm.getToSido());
+        ps.createAFile("each_sido_cnt.txt");
+        List<String> cntResult = new ArrayList<>();
+
+        Map<String, Integer> map = ps.getMoveCntMap(pml);
+        String targetFilename = "each_sido_cnt.txt";
+
+        for (String key : map.keySet()) {
+            String s = String.format("key:%s value:%d\n", key, map.get(key));
+            cntResult.add(s);
+//            System.out.printf("key:%s value:%d\n", key, map.get(key));
         }
-        populationStatistics.write(strings, "./from_to.txt");
+        ps.write(cntResult, targetFilename);
+
     }
 }
