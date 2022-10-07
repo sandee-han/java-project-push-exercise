@@ -143,6 +143,7 @@ public class PopulationStatistics {
 //            System.out.printf("전입:%s, 전출:%s\n", pm.getFromSido(), pm.getToSido());
 //        }
 //        ps.write(strings, "./from_to.txt");
+
         System.out.println();
 //      //   파일 전입, 전출 출력시 사용
         String address = "./from_to.txt";
