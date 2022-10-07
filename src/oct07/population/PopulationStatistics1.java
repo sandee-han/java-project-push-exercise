@@ -5,7 +5,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-public class PopulationStatistics {
+public class PopulationStatistics1 {
 
 
 
@@ -23,12 +23,12 @@ public class PopulationStatistics {
         reader.close();
     }
 
-    public PopulationMove parse(String data) {
+    public PopulationMove1 parse(String data) {
         String[] split = data.split(",");
         int fromSido = Integer.parseInt(split[0]);
         int toSido = Integer.parseInt(split[6]);
 
-        return new PopulationMove(fromSido, toSido);
+        return new PopulationMove1(fromSido, toSido);
     }
 
 
@@ -61,9 +61,9 @@ public class PopulationStatistics {
         FileReader fileReader = new FileReader(address);
         // 여기까진 파일을 읽지 않는다.
 
-        PopulationStatistics populationStatistics = new PopulationStatistics();
+        PopulationStatistics1 populationStatistics1 = new PopulationStatistics1();
 //        populationStatistics.readFileByLine(address);
-        populationStatistics.readByLine2(address);
+        populationStatistics1.readByLine2(address);
 
 
 

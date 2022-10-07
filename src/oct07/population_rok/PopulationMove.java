@@ -1,4 +1,4 @@
-package oct07.population;
+package oct07.population_rok;
 
 import java.io.IOException;
 
@@ -22,6 +22,13 @@ public class PopulationMove {
         this.toSido = toSido;
     }
 
+    public PopulationMove(String fromSido, String toSido) {
+        this.fromSido = Integer.parseInt(fromSido);
+        this.toSido = Integer.parseInt(toSido);
+    }
+
+
+
     public int getFromSido() {
         return fromSido;
     }
@@ -30,24 +37,5 @@ public class PopulationMove {
         return toSido;
     }
 
-    public void setFromSido(int fromSido) {
-        this.fromSido = fromSido;
-    }
-
-    public void setToSido(int toSido) {
-        this.toSido = toSido;
-    }
-
-    public String[] splitLine() throws IOException {
-//        PopulationStatistics populationStatistics = new PopulationStatistics();
-//        populationStatistics.readFileByLine(address);
-        String[] array = getSample().split(",");
-        return array;
-    }
-
-    public void getSido() throws IOException {
-        setFromSido(Integer.parseInt(splitLine()[0]));
-        setToSido(Integer.parseInt(splitLine()[6]));
-    }
 
 }

@@ -1,4 +1,4 @@
-package oct06.readfile;
+package oct07.population;
 
 public class SidoNumToName {
     private String SidoName;
