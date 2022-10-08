@@ -57,6 +57,20 @@ public class PopulationStatistics {
         return pml;
     }
 
+    // 요오즘 서타일
+    public void readByLine2(String filename) {
+        try (BufferedReader br = Files.newBufferedReader(Paths.get(filename), StandardCharsets.UTF_8)) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                System.out.println(line);
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
+
     // 파일 생성시 사용
     // readByLine 여기를 parse로 변경해야댐 damn..
     public PopulationMove parse(String data) {
@@ -88,17 +102,7 @@ public class PopulationStatistics {
         System.out.println(fileContents);
     }
 
-    // 요오즘 서타일
-    public void readByLine2(String filename) {
-        try (BufferedReader br = Files.newBufferedReader(Paths.get(filename), StandardCharsets.UTF_8)) {
-            String line;
-            while ((line = br.readLine()) != null) {
-                System.out.println(line);
-            }
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
+
 
     // 개수세는 메서드
     public Map<String, Integer> getMoveCntMap(List<PopulationMove> pml) {
@@ -137,6 +141,7 @@ public class PopulationStatistics {
 //        }
 //
 //        ps.write(strings, "./from_to.txt");
+
         System.out.println();
 
 //        for (PopulationMove pm : pml) {
@@ -145,6 +150,7 @@ public class PopulationStatistics {
 //        ps.write(strings, "./from_to.txt");
 
         System.out.println();
+
 //      //   파일 전입, 전출 출력시 사용
         String address = "./from_to.txt";
         PopulationStatistics ps = new PopulationStatistics();
