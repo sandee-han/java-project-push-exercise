@@ -1,22 +1,38 @@
 package codeup.codeup_etc;
 
-public class Codeup4596 {
+public class Codeup2081 {
 
-    public int getMax(int arr[]){
+    public int[] getMax(int arr[]){
         // loop 구성
-        int maxValue = 0;
+        int maxIdx = 0;
+        int maxValue = arr[0];
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] > maxValue) {
                 maxValue = arr[i];
+                maxIdx = i;
             }
         }
-        return maxValue;
+        return new int[]{maxValue, maxIdx};
+    }
+
+    public int[] getMin(int arr[]){
+        // loop 구성
+        int minIdx = 0;
+        int minValue = arr[0];
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > minValue) {
+                minValue = arr[i];
+                minIdx = i;
+            }
+        }
+        return new int[]{minValue, minIdx};
     }
 
     public static void main(String[] args) {
         int[] arr = new int[]{3, 29, 38, 12, 57, 74, 40, 85, 61};
-        Codeup4596 codeup4596 = new Codeup4596();
+        Codeup2081 codeup2081 = new Codeup2081();
 
-        System.out.println(codeup4596.getMax(arr));
+        System.out.println(codeup2081.getMax(arr)[0]);
+        System.out.println(codeup2081.getMax(arr)[1] + 1);
     }
 }
