@@ -13,4 +13,13 @@ public class Sort {
         }
         return arr;
     }
+
+    public int[] Swap(int[] arr) {
+        if (arr[1] < arr[0]) {
+            int temp = arr[1];
+            arr[1] = arr[0];
+            arr[0] = temp;
+        }
+        return arr;
+    }
 }
