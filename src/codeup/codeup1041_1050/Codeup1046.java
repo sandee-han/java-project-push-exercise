@@ -1,0 +1,21 @@
+package codeup.codeup1041_1050;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.text.DecimalFormat;
+
+public class Codeup1046 {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String input = br.readLine();
+        String[] arr = input.split(" ");
+        int i1 = Integer.parseInt(arr[0]);
+        int i2 = Integer.parseInt(arr[1]);
+        int i3 = Integer.parseInt(arr[2]);
+        DecimalFormat form = new DecimalFormat("#.0");
+
+        System.out.println(i1 + i2 + i3);
+        System.out.println(form.format((double)(i1 + i2 + i3) / 3));
+    }
+}

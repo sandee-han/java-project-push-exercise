@@ -7,8 +7,6 @@ import java.nio.file.Paths;
 
 public class PopulationStatistics1 {
 
-
-
     public void readFileByLine(String filename) throws IOException {
 //        FileReader fileReader = new FileReader((filename));
 //        BufferedReader reader = new BufferedReader(fileReader);
@@ -30,8 +28,6 @@ public class PopulationStatistics1 {
 
         return new PopulationMove1(fromSido, toSido);
     }
-
-
 
     public void readByChar(String filename) throws IOException {
         FileReader fileReader = new FileReader(filename);

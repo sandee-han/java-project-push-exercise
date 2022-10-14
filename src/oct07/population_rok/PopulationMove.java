@@ -27,8 +27,6 @@ public class PopulationMove {
         this.toSido = Integer.parseInt(toSido);
     }
 
-
-
     public int getFromSido() {
         return fromSido;
     }
