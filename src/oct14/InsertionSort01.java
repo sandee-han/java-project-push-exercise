@@ -7,9 +7,11 @@ import java.util.Arrays;
 
 public class InsertionSort01 {
     public static void main(String[] args) throws IOException {
-        int[] arr = {8, 5, 6, 2, 4};
         Sort sort = new Sort();
-        System.out.println(Arrays.toString(sort.Swap(arr)));
-        System.out.println(Arrays.toString(sort.Insertion(arr)));
+        Array array = new Array();
+
+        System.out.println("Swap Result: " + Arrays.toString(sort.Swap(array.getArr())));
+        System.out.println("Insertion Result: " + Arrays.toString(sort.Insertion(array.getArr())));
+        System.out.println("Insertion2 Result: " + Arrays.toString(sort.Insertion2(array.getArr(), 1)));
     }
 }

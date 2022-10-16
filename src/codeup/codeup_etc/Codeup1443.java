@@ -13,7 +13,6 @@ public class Codeup1443 {
         for(int i = 0; i < count; i++){
             arr[i] = Integer.parseInt(br.readLine());
         }
-
         for(int i = 1; i < arr.length; i++){
             for(int j = i; j > 0; j--){
                 if(arr[j] < arr[j-1]){

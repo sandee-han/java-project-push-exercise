@@ -22,4 +22,14 @@ public class Sort {
         }
         return arr;
     }
+
+    public int[] Insertion2(int[] arr, int i) {
+        if(i == arr.length) return arr;
+        for(int j = i; j > 0; j--) {
+            int temp = arr[j];
+            arr[j] = arr[j-1];
+            arr[j-1] = temp;
+        }
+        return Insertion2(arr, i + 1);
+    }
 }
