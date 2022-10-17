@@ -15,5 +15,9 @@ public class RightTriangle {
             }
             System.out.println("");
         }
+        System.out.println("*");
+        System.out.println("* *");
+        System.out.println("* * *");
+        System.out.println("* * * *");
     }
 }
